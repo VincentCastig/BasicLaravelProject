@@ -103,6 +103,8 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todo = Todo::find();
+        $todo->delete();
+        return redirect('/')->with('success', 'Todo Delete');
     }
 }
