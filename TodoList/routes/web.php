@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', 'TodosController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::resource('todo', 'TodosController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
